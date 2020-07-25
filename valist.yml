@@ -1,0 +1,9 @@
+services:
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_PASSWORD=password
+  web:
+    public: true
+    cmd: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    port: 3000
